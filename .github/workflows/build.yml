@@ -6,6 +6,9 @@ on:
       - "v*"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -45,46 +48,45 @@ jobs:
           tagName: ${{ github.ref_name }}
           releaseName: "GotifyNotification ${{ github.ref_name }}"
           releaseBody: |
-            ## 安装说明
+            ## 安装说明 / Installation
 
             ### Windows
 
-            | 文件 | 说明 |
+            | 文件 / File | 说明 / Description |
             |------|------|
-            | `GotifyNotification_*_x64-setup.exe` | NSIS 安装包，双击安装 |
-            | `GotifyNotification_portable.zip` | 便携版，解压即用 |
+            | `GotifyNotification_*_x64-setup.exe` | NSIS 安装包 / NSIS installer |
+            | `GotifyNotification_portable.zip` | 便携版，解压即用 / Portable, extract and run |
 
-            ### 使用步骤
+            ### 系统要求 / Requirements
+            - Windows 10 1809+ / Windows 11
+            - WebView2 (pre-installed on Win11)
 
-            1. 安装或解压后运行 GotifyNotification
-            2. 在设置中填入 Gotify 服务器地址和客户端令牌
-            3. 点击「测试连接」验证
-            4. 保存设置，开始接收消息
+            ### 使用步骤 / Quick Start
+            1. 安装或解压后运行 / Install or extract and run
+            2. 设置中填入 Gotify 服务器地址和令牌 / Enter Gotify server URL & token in Settings
+            3. 点击「测试连接」/ Click "Test Connection"
+            4. 保存设置，开始接收消息 / Save settings, start receiving
           releaseDraft: false
           prerelease: false
           args: --target ${{ matrix.target }}
 
       - name: Create portable zip
+        if: startsWith(github.ref, 'refs/tags/')
         shell: bash
         run: |
           exe="src-tauri/target/${{ matrix.target }}/release/gotify-notification.exe"
           if [ -f "$exe" ]; then
             cp "$exe" GotifyNotification.exe
             7z a "GotifyNotification_portable.zip" GotifyNotification.exe
+            echo "Portable zip created successfully"
           else
-            echo "Release exe not found at $exe"
+            echo "ERROR: Release exe not found at $exe"
+            ls -la src-tauri/target/${{ matrix.target }}/release/ 2>/dev/null || true
             exit 1
           fi
 
-      - name: Upload portable zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: portable-${{ matrix.target }}
-          path: GotifyNotification_portable.zip
-
-      - name: Upload to Release
+      - name: Upload portable to Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            GotifyNotification_portable.zip
+          files: GotifyNotification_portable.zip
