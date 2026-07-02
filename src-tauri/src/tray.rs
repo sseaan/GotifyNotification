@@ -26,7 +26,7 @@ pub fn build_tray(app_handle: &AppHandle) -> Result<(), Box<dyn std::error::Erro
     let _tray = TrayIconBuilder::new()
         .icon(icon)
         .menu(&menu)
-        .tooltip("Gotify 消息通知")
+        .tooltip("Nexthrum")
         .on_menu_event(move |app, event| {
             match event.id().as_ref() {
                 "show_messages" => {
@@ -93,9 +93,9 @@ pub fn update_unread_indicator(app_handle: &AppHandle, has_unread: bool) {
         if has_unread {
             // TODO: Could set a different icon with a red dot overlay
             // For now, keep the same icon
-            let _ = tray.set_tooltip(Some("Gotify Notification - Unread Messages"));
+            let _ = tray.set_tooltip(Some("Nexthrum - Unread Messages"));
         } else {
-            let _ = tray.set_tooltip(Some("Gotify Notification"));
+            let _ = tray.set_tooltip(Some("Nexthrum"));
         }
     }
 }

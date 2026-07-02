@@ -1,4 +1,4 @@
-# GotifyNotification - 技术规范
+# Nexthrum - 技术规范
 
 ## 技术选型理由
 

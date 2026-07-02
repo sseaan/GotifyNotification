@@ -5,14 +5,14 @@ use std::path::PathBuf;
 /// Get the path to the SQLite database file
 fn get_db_path(_settings: &AppSettings) -> PathBuf {
     let mut path = dirs_next().unwrap_or_else(|| PathBuf::from("."));
-    path.push("gotify_messages.db");
+    path.push("nexthrum_messages.db");
     path
 }
 
 /// Get the data directory for storing settings
 fn get_data_dir() -> PathBuf {
     let mut path = dirs_next().unwrap_or_else(|| PathBuf::from("."));
-    path.push("gotify_notification_data");
+    path.push("nexthrum_data");
     std::fs::create_dir_all(&path).ok();
     path
 }
@@ -23,7 +23,7 @@ fn dirs_next() -> Option<PathBuf> {
     {
         std::env::var("APPDATA")
             .ok()
-            .map(|p| PathBuf::from(p).join("GotifyNotification"))
+            .map(|p| PathBuf::from(p).join("Nexthrum"))
     }
     #[cfg(not(target_os = "windows"))]
     {
@@ -34,8 +34,7 @@ fn dirs_next() -> Option<PathBuf> {
 /// Open the SQLite database, creating tables if needed
 fn open_db(settings: &AppSettings) -> Result<Connection, String> {
     let db_path = get_db_path(settings);
-    let conn =
-        Connection::open(&db_path).map_err(|e| format!("Failed to open database: {}", e))?;
+    let conn = Connection::open(&db_path).map_err(|e| format!("Failed to open database: {}", e))?;
 
     conn.execute_batch(
         "CREATE TABLE IF NOT EXISTS messages (
@@ -150,11 +149,9 @@ pub fn clear_messages(settings: &AppSettings) -> Result<(), String> {
 pub fn get_unread_count(settings: &AppSettings) -> Result<i64, String> {
     let conn = open_db(settings)?;
     let count: i64 = conn
-        .query_row(
-            "SELECT COUNT(*) FROM messages WHERE read = 0",
-            [],
-            |row| row.get(0),
-        )
+        .query_row("SELECT COUNT(*) FROM messages WHERE read = 0", [], |row| {
+            row.get(0)
+        })
         .map_err(|e| format!("Failed to count unread: {}", e))?;
     Ok(count)
 }

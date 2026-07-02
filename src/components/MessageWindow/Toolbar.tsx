@@ -25,9 +25,6 @@ export function Toolbar() {
   return (
     <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-surface)]">
       <div className="flex items-center gap-3">
-        <h1 className="text-lg font-semibold text-[var(--color-text)]">
-          {t.app.title}
-        </h1>
         <span
           className={`w-2 h-2 rounded-full ${
             wsConnected

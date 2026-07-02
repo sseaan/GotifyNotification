@@ -1556,29 +1556,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gotify-notification"
-version = "1.0.0"
-dependencies = [
- "chrono",
- "env_logger",
- "futures-util",
- "image",
- "log",
- "reqwest 0.12.28",
- "rusqlite",
- "rustls",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-autostart",
- "tauri-plugin-notification",
- "tokio",
- "tokio-tungstenite",
- "url",
-]
-
-[[package]]
 name = "gtk"
 version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2411,6 +2388,29 @@ name = "new_debug_unreachable"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "650eef8c711430f1a879fdd01d4745a7deea475becfb90269c06775983bbf086"
+
+[[package]]
+name = "nexthrum"
+version = "1.0.0"
+dependencies = [
+ "chrono",
+ "env_logger",
+ "futures-util",
+ "image",
+ "log",
+ "reqwest 0.12.28",
+ "rusqlite",
+ "rustls",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-autostart",
+ "tauri-plugin-notification",
+ "tokio",
+ "tokio-tungstenite",
+ "url",
+]
 
 [[package]]
 name = "notify-rust"

@@ -1,4 +1,4 @@
-# GotifyNotification - 开发指南
+# Nexthrum - 开发指南
 
 ## 环境要求
 
@@ -25,7 +25,7 @@
 ### 1. 克隆并安装依赖
 
 ```bash
-cd GotifyNotification
+cd Nexthrum
 npm install
 ```
 
@@ -47,7 +47,7 @@ npm run tauri build
 
 构建产物位于 `src-tauri/target/release/bundle/`：
 - `msi/` / `nsis/` - Windows 安装包
-- 可执行文件在 `src-tauri/target/release/gotify-notification.exe`
+- 可执行文件在 `src-tauri/target/release/nexthrum.exe`
 
 ### 4. 仅构建前端（调试用）
 
@@ -84,7 +84,7 @@ npm run build
 
 - **前端调试**：`npm run tauri dev` 后，在 Tauri 窗口中按 `F12` 打开 DevTools
 - **后端日志**：Rust 端使用 `log` crate，日志输出到终端
-- **数据库检查**：SQLite 数据库位于 `%APPDATA%/GotifyNotification/gotify_messages.db`，可用 [DB Browser for SQLite](https://sqlitebrowser.org/) 打开查看
+- **数据库检查**：SQLite 数据库位于 `%APPDATA%/Nexthrum/gotify_messages.db`，可用 [DB Browser for SQLite](https://sqlitebrowser.org/) 打开查看
 
 ---
 

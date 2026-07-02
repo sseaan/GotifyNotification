@@ -16,11 +16,7 @@ export function TitleBar() {
       onMouseDown={() => appWindow.startDragging()}
       className="flex items-center justify-between h-9 px-2 select-none bg-[var(--color-surface)] border-b border-[var(--color-border)] cursor-grab active:cursor-grabbing"
     >
-      <div className="flex items-center gap-2 ml-1 min-w-0">
-        <span className="text-xs font-medium text-[var(--color-text-secondary)] truncate">
-          Gotify Notification
-        </span>
-      </div>
+      <div className="flex-1" />
 
       <div
         className="flex items-center -mr-1"

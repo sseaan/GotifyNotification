@@ -1,8 +1,8 @@
-# GotifyNotification - 开发需求文档
+# Nexthrum - 开发需求文档
 
 ## 项目概述
 
-GotifyNotification 是一款 Windows 桌面应用程序，用于连接 Gotify 消息推送服务器，通过 Windows 原生通知展示收到的消息。
+Nexthrum 是一款 Windows 桌面应用程序，用于连接 Gotify 消息推送服务器，通过 Windows 原生通知展示收到的消息。
 
 ## 技术栈
 

@@ -1,5 +1,5 @@
 const zh = {
-  app: { title: "Gotify 消息" },
+  app: { title: "Nexthrum" },
 
   toolbar: {
     clearAll: "清空全部",

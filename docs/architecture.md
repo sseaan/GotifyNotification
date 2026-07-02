@@ -1,4 +1,4 @@
-# GotifyNotification - 架构设计
+# Nexthrum - 架构设计
 
 ## 系统架构图
 
@@ -60,9 +60,9 @@ graph TD
 - `is_in_dnd_period()`: 判断当前是否在免打扰时段
 
 #### `storage.rs`
-- SQLite 数据库路径：`%APPDATA%/GotifyNotification/gotify_messages.db`
+- SQLite 数据库路径：`%APPDATA%/Nexthrum/nexthrum_messages.db`
 - 表结构 `messages`：id, appid, message, title, priority, date, extras, read, received_at
-- 设置文件路径：`%APPDATA%/GotifyNotification/gotify_notification_data/settings.json`
+- 设置文件路径：`%APPDATA%/Nexthrum/nexthrum_data/settings.json`
 - 提供 CRUD 操作：save, get, mark_read, delete, clear, get_unread_count, cleanup_old
 
 #### `tray.rs`

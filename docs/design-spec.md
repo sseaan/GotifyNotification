@@ -1,4 +1,4 @@
-# GotifyNotification - 设计规范
+# Nexthrum - 设计规范
 
 ## 设计理念
 

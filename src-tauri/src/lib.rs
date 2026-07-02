@@ -257,7 +257,7 @@ pub fn run() {
                 "message",
                 tauri::WebviewUrl::App("index.html".into()),
             )
-            .title("Gotify Notification")
+            .title("Nexthrum")
             .inner_size(800.0, 600.0)
             .min_inner_size(400.0, 300.0)
             .decorations(false)

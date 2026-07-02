@@ -1,5 +1,5 @@
 const en = {
-  app: { title: "Gotify Messages" },
+  app: { title: "Nexthrum" },
 
   toolbar: {
     clearAll: "Clear All",

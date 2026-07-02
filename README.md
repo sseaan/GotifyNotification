@@ -1,6 +1,6 @@
-# GotifyNotification
+# Nexthrum
 
-[🇨🇳 中文版](#gotifynotification-中文)
+[🇨🇳 中文版](#nexthrum-中文)
 
 A Windows desktop client for [Gotify](https://gotify.net/) — receive push messages via native Windows notifications.
 
@@ -36,12 +36,12 @@ Built with **Tauri 2.0 + React + TypeScript + Rust**.
 
 ### Download
 
-Get the latest version from [GitHub Releases](https://github.com/sseaan/GotifyNotification/releases).
+Get the latest version from [GitHub Releases](https://github.com/sseaan/Nexthrum/releases).
 
 | File | Description |
 |------|-------------|
-| `GotifyNotification_*_x64-setup.exe` | NSIS installer — install for current user |
-| `GotifyNotification_portable.zip` | Portable version — extract and run |
+| `Nexthrum_*_x64-setup.exe` | NSIS installer — install for current user |
+| `Nexthrum_portable.zip` | Portable version — extract and run |
 
 ### System Requirements
 
@@ -52,7 +52,7 @@ Get the latest version from [GitHub Releases](https://github.com/sseaan/GotifyNo
 
 ## 🚀 Usage
 
-1. Launch GotifyNotification (window opens, tray icon appears)
+1. Launch Nexthrum (window opens, tray icon appears)
 2. Click the tray icon or open the window from the tray menu
 3. Go to **Settings** (⚙ icon in toolbar or tray menu → Settings)
 4. Enter your **Gotify Server URL** and **Client Token**
@@ -91,8 +91,8 @@ Get the latest version from [GitHub Releases](https://github.com/sseaan/GotifyNo
 
 ```bash
 # Clone
-git clone https://github.com/sseaan/GotifyNotification.git
-cd GotifyNotification
+git clone https://github.com/sseaan/Nexthrum.git
+cd Nexthrum
 
 # Install frontend dependencies
 npm install
@@ -107,7 +107,7 @@ npm run tauri build
 ### Project Structure
 
 ```
-GotifyNotification/
+Nexthrum/
 ├── src/                    # React frontend
 │   ├── components/         # UI components
 │   │   ├── MessageWindow/  # Message list & toolbar
@@ -153,9 +153,9 @@ MIT © [Sean](https://github.com/sseaan)
 
 ---
 
-# GotifyNotification 中文
+# Nexthrum 中文
 
-[🇬🇧 English](#gotifynotification)
+[🇬🇧 English](#nexthrum)
 
 一款 Windows 桌面 Gotify 客户端 — 通过 Windows 原生通知接收推送消息。
 
@@ -191,12 +191,12 @@ MIT © [Sean](https://github.com/sseaan)
 
 ### 下载
 
-从 [GitHub Releases](https://github.com/sseaan/GotifyNotification/releases) 获取最新版本。
+从 [GitHub Releases](https://github.com/sseaan/Nexthrum/releases) 获取最新版本。
 
 | 文件 | 说明 |
 |------|------|
-| `GotifyNotification_*_x64-setup.exe` | NSIS 安装包 — 为当前用户安装 |
-| `GotifyNotification_portable.zip` | 便携版 — 解压即用 |
+| `Nexthrum_*_x64-setup.exe` | NSIS 安装包 — 为当前用户安装 |
+| `Nexthrum_portable.zip` | 便携版 — 解压即用 |
 
 ### 系统要求
 
@@ -207,7 +207,7 @@ MIT © [Sean](https://github.com/sseaan)
 
 ## 🚀 使用说明
 
-1. 启动 GotifyNotification（窗口打开，托盘图标出现）
+1. 启动 Nexthrum（窗口打开，托盘图标出现）
 2. 点击托盘图标或从托盘菜单打开窗口
 3. 进入**设置**（工具栏 ⚙ 按钮或托盘菜单 → 设置）
 4. 填写 **Gotify 服务器地址**和**客户端令牌**
@@ -246,8 +246,8 @@ MIT © [Sean](https://github.com/sseaan)
 
 ```bash
 # 克隆项目
-git clone https://github.com/sseaan/GotifyNotification.git
-cd GotifyNotification
+git clone https://github.com/sseaan/Nexthrum.git
+cd Nexthrum
 
 # 安装前端依赖
 npm install
@@ -262,7 +262,7 @@ npm run tauri build
 ### 项目结构
 
 ```
-GotifyNotification/
+Nexthrum/
 ├── src/                    # React 前端
 │   ├── components/         # UI 组件
 │   │   ├── MessageWindow/  # 消息列表和工具栏
